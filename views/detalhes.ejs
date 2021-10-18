@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockMusic</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Detalhes das suas Musicas</title>
+  </head>
+   
+<body>
+  <header>
+    <div class="content">
+      <nav>
+        <p class="brand">Rock<strong>Music</strong></p>
+        <ul>
+          <li><a href="index.ejs">Catálogo</a></li>
+          <li><a href="index.ejs">Sobre nós</a></li>
+          <li><a href="criar.ejs">Cadastrar nova Musica</a></li>
+        </ul>
+      </nav>
+      <div class="header-block">
+        <div class="text">
+          <h2>A musica perfeita para você</h2>
+          <p>
+            A musica perfeita para você ouvir a qualquer momento!
+          </p>
+        </div>
+        <img src="" alt="100" height="100" />
+      </div>
+    </div>
+  </header>
+    <h3>Lista de Musicas:</h3>
+    
+    <% if(message != "") {  %>
+      <section id="message">
+          <p><%= message %></p> <span id="close">&times;</span>
+      </section>
+  <% }  %>
+
+  <section id="cursos">
+    
+        <section class="card">
+            <article id="content">
+                    <ul>
+                        <li>Nome: <%= filme.nome %></li>
+                        <li>Descrição: <%= filme.descricao %></li>
+                        <a href="/">
+                            <img src="<%= musica.imagem %>" width=200>
+                        </a>
+                        <a href="/deletar/<%= musica.id %>">DELETAR!</a>
+                    </ul>
+            </article>
+        </section>
+</section>
+  
+    <section class="Sobre-nós" id="Sobre-nós">
+      <div class="contanto">
+        <div class="title-wrapper-about">
+          <p>Conheça sobre nós</p>
+          <h3>RockMusic</h3>
+        </div>
+        <div class="sobre-conteúdo">
+          <div class="left">
+            <img src="" alt="Sobre-nós" />
+          </div>
+          <div class="right">
+            <h3>Musica rock</h3>
+            <p>
+              Somos fans de rock e admiradores da música rock é um 
+              amplo gênero de música popular que se originou como 
+              " rock and roll " nos Estados Unidos no final da década
+              de 1940 e início da década de 1950, desenvolvendo-se em
+              uma variedade de estilos em meados da década de 1960.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="main">
+        <div class="content footer-links">
+          <div class="footer-company">
+            <h4>Musica</h4>
+            <h6>Sobre-nós</h6>
+            <h6>Contacto</h6>
+          </div>
+          
+          <div class="footer-social">
+            <h4>Permaneça conectado</h4>
+            <div class="social-icons">
+              <img src="" alt="Instagram" />
+              <img src="" alt="Facebook" />
+            </div>
+          </div>
+         
+          </div>
+        </div>
+      <div class="last">Catalogo 2021 - Sembre online</div>
+    </footer>
+  </body>
+</html>
