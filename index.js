@@ -13,6 +13,20 @@ let message = "";
 
 const Musica = require("./models/musica");
 
+
+app.get("/login/:id", (req, res) => {
+  res.render("detalhes",{message});
+});
+
+app.get("/login", async (req, res) => {
+  
+  const musica = await Musica.findAll(); 
+
+  res.render("login", {
+    musica, message
+  });
+});
+
 app.get("/", async (req, res) => {
   
   const musica = await Musica.findAll(); 
@@ -22,6 +36,9 @@ app.get("/", async (req, res) => {
   });
 });
 
+app.get("/detalhes/:id", (req, res) => {
+  res.render("detalhes",{message});
+});
 
 app.get("/detalhes/:id", async (req, res) => {
 

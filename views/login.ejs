@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockMusic</title>
+    <link rel="icon" type = " image / jpg " href="./assets/logo.jpg">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+   
+<body>
+    <header>
+      <div class="content">
+        <nav>
+          <p class="brand">Rock<strong>Music</strong></p>
+          <ul>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#Sobre-nós">Sobre nós</a></li>
+            <li><a href="/criar">Cadastrar nova Musica</a></li>
+            <li><a  href="#login"><button>Login</button></a></li>
+          </ul>
+        </nav>
+        <div class="header-block">
+          <div class="text">
+            <h2>A musica perfeita para você</h2>
+            <p>
+              A musica perfeita para você ouvir a qualquer momento!
+            </p>
+          </div>
+          <img src="https://store-images.s-microsoft.com/image/apps.29439.14275335401288852.0039a406-66bd-4b22-824e-f764f3eecfd1.df3bf2cf-8837-477d-8f2e-304b2cb64129?mode=scale&q=90&h=200&w=200&background=%23ffffff" alt="100" height="200" />
+        </div>
+      </div>
+    </header>
+
+    <% if(message != "") {  %>
+      <section id="message">
+          <p><%= message %></p> <span id="close">&times;</span>
+      </section>
+  <% }  %>
+
+  <section id="cursos">
+   <h3>Lista de Musica:</h3>
+    <% musica.forEach(item => { %>
+        <section class="card">
+            <article id="catalogo">
+               <ul>
+                    <li>Nome: <%= item.nome %></li>
+                    <li>Descrição: <%= item.descricao %></li>
+                    <a href="/detalhes/<%= item.id %>">
+                        <img src="<%= item.imagem %>" width=200>
+                    </a>
+                </ul>
+                    <a href = "/editar/<%= item.id %>">Editar</a>
+                    <a href = "/deletar/<%= item.id %>">Deletar</a>
+            </article>
+        </section>
+    <% }) %> 
+</section>
+
+    <section class="Sobre-nós" id="Sobre-nós">
+      <div class="contanto">
+        <div class="title-wrapper-about">
+          <p>Conheça sobre nós</p>
+          <h2>RockMusic</h2>
+        </div>
+        <div class="sobre-conteúdo">
+         </div>
+          <div class="right">
+            <h2>Musica rock</h2>
+            <p>
+              Somos fans de rock e admiradores da música rock é um 
+              amplo gênero de música popular que se originou como 
+              " rock and roll " nos Estados Unidos no final da década
+              de 1940 e início da década de 1950, desenvolvendo-se em
+              uma variedade de estilos em meados da década de 1960.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="login" class="login">
+      <h2>Fazer Login!</h2>
+
+      <form action="/criar" method="POST">
+          <div>
+              <label for="nome">Digite seu login: </label>
+              <input type="text" name="usuario" id="nome" placeholder="Digite seu nome" required>
+          </div>
+      
+          <div>
+              <label for="senha">Digite sua senha: </label>
+              <input type="senha" name="senha" id="senha" placeholder="Digite sua senha" required>
+          </div>
+      
+          <button type="submit"> Enter </button>
+      </form>
+  </section>
+
+    <footer>
+      <div class="main">
+        <div class="content footer-links">
+          <div class="footer-company">
+            <h4>Musica</h4>
+            <h6>Sobre-nós</h6>
+            <h6>Contacto</h6>
+          </div>
+          
+          <div class="footer-social">
+            <h4>Permaneça conectado</h4>
+            <div class="social-icons">
+              <img src="https://t.ctcdn.com.br/Wl2ilBJi0ZFEzeNgF8dC57PS_g8=/400x400/smart/i489927.jpeg" alt="Instagram" />
+              <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="Facebook" />
+            </div>
+          </div>
+         
+          </div>
+        </div>
+      <div class="last">Catalogo 2021 - Sembre online</div>
+    </footer>
+  </body>
+</html>

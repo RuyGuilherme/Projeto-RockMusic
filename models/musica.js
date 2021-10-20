@@ -1,5 +1,4 @@
 const database = require("./../database");
-
 const Sequelize = require("sequelize");
 
 const musica = database.define("musica", {
