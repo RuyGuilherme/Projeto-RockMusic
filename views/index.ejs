@@ -15,8 +15,8 @@
           <ul>
             <li><a href="#catalogo">Catálogo</a></li>
             <li><a href="#Sobre-nós">Sobre nós</a></li>
-            <li><a href="criar.ejs">Cadastrar nova Musica</a></li>
-            <button href="#login">Login</button>
+            <li><a href="/criar">Cadastrar nova Musica</a></li>
+            <li><a  href="#login"><button>Login</button></a></li>
           </ul>
         </nav>
         <div class="header-block">
@@ -41,7 +41,7 @@
     <h3>Lista de Musica:</h3>
     <% musica.forEach(item => { %>
         <section class="card">
-            <article id="content">
+            <article id="catalogo">
                 <ul>
                     <li>Nome: <%= item.nome %></li>
                     <li>Descrição: <%= item.descricao %></li>
@@ -50,6 +50,7 @@
                     </a>
                 </ul>
                     <a href = "/editar/<%= item.id %>">Editar</a>
+                    <a href = "/deletar/<%= item.id %>">Deletar</a>
             </article>
         </section>
     <% }) %> 
@@ -59,14 +60,14 @@
       <div class="contanto">
         <div class="title-wrapper-about">
           <p>Conheça sobre nós</p>
-          <h3>RockMusic</h3>
+          <h2>RockMusic</h2>
         </div>
         <div class="sobre-conteúdo">
           <div class="left">
             <img src="" alt="Sobre-nós" />
           </div>
           <div class="right">
-            <h3>Musica rock</h3>
+            <h2>Musica rock</h2>
             <p>
               Somos fans de rock e admiradores da música rock é um 
               amplo gênero de música popular que se originou como 
@@ -79,7 +80,7 @@
       </div>
     </section>
 
-    <section id="login">
+    <section id="login" class="login">
       <h2>Fazer Login!</h2>
 
       <form action="/subscription" method="POST">
@@ -89,8 +90,8 @@
           </div>
       
           <div>
-              <label for="email">Digite sua senha: </label>
-              <input type="email" name="email" id="email" placeholder="Digite sua senha" required>
+              <label for="senha">Digite sua senha: </label>
+              <input type="senha" name="senha" id="senha" placeholder="Digite sua senha" required>
           </div>
       
           <button type="submit"> Enter </button>

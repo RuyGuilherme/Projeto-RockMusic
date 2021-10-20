@@ -90,7 +90,7 @@
   .content .header-block {
     max-width: 1000px;
     min-width: 300px;
-    height: 450px;
+    height: 250px;
     background: var(--blue);
     border-radius: 8px;
     box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);
@@ -130,6 +130,25 @@
     transition: transform 0.4s;
   }
   
+  section#cursos {
+    background-color: rgb(255, 68, 230);
+    padding: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  section#cursos section.card {
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    position: relative;
+  }
+
   section .catalogo {
     width: 100vw;
     padding: 100px;

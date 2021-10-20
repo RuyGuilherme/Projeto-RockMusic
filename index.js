@@ -11,7 +11,7 @@ app.use(express.urlencoded());
 
 let message = "";
 
-const Musica = require("");
+const Musica = require("./models/musica");
 
 app.get("/", async (req, res) => {
   
@@ -24,6 +24,7 @@ app.get("/", async (req, res) => {
 
 
 app.get("/detalhes/:id", async (req, res) => {
+
   const musica = await Musica.findByPk(req.params.id); 
 
   res.render("detalhes", {
@@ -71,6 +72,7 @@ app.post("/criar", async (req, res) => {
 });
 
 app.get("/editar/:id", async (req, res) => {
+
   const musica = await Musica.findByPk(req.params.id);
 
   if (!musica) {
@@ -86,6 +88,7 @@ app.get("/editar/:id", async (req, res) => {
 });
 
 app.post("/editar/:id", async (req, res) => {
+
   const musica = await Musica.findByPk(req.params.id);
 
   const { nome, descricao, imagem } = req.body;
@@ -131,7 +134,7 @@ app.post("/deletar/:id", async (req, res) => {
   res.redirect("/");
 });
 
-app.post("/index.#login", async (req, res) => {
+app.post("/", async (req, res) => {
 
   function login() {
          let login = document.querySelector('#login').value
