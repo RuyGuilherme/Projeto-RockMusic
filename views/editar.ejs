@@ -4,35 +4,34 @@
    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RockMusic</title>
+    <title>TheBest</title>
     <link rel="icon" type = " image / png " href="./assets/logo.jpg">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Adicionar nova Musica</title>
+    <title>Edite os dados do time</title>
   </head>
   <body>
     <header>
       <div class="content">
         <nav>
-          <p href="/" class="brand">Rock<strong>Music</strong></p>
+          <p class="brand">the<strong>Best</strong></p>
           <ul>
-            <li><a href="/">Catálogo</a></li>
+            <li><a href="/">Times</a></li>
             <li><a href="/">Sobre nós</a></li>
             <li><a href="/criar">Cadastrar nova Musica</a></li>
             <li><a  href="/"><button>Login</button></a></li>
           </ul>
         </nav>
         <div class="header-block">
-          <div class="text">
-            <h2>A musica perfeita para você</h2>
-            <p>
-              A musica perfeita para você ouvir a qualquer momento!
-            </p>
+            <div class="text">
+              
+              <h2>The time best</h2>
+              <h1>Maiores times do mundo</h1>
+    
+            </div>
           </div>
-          <img src="" alt="100" height="100" />
         </div>
-      </div>
     </header>
-   <h3>Editar Musica:</h3>
+   <h3>Editar time:</h3>
 
 
     <% if(message != "") {  %>
@@ -40,7 +39,11 @@
             <p><%= message %></p> <span id="close">&times;</span>
         </section>
     <% }  %>
-    
+
+    <section id="esp">
+      <h1>espaço</h1>
+    </section>
+            
     <section id="inscrever">
      
         <form action="/editar/<%= musica.id %>" method="POST">
@@ -64,9 +67,9 @@
     </section>
 
     <footer>
-        <p>
-            < I love Rock Music /> <a target="_blank"> RockMusic</a>
-        </p>
+       
+          <div class="last">Catalogo 2021 - Sembre online</div>
+       
     </footer>
     <script src="/js/script.js"></script>
 </body>

@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000; // Const para armanezar a porta do servidor
+const port = process.env.PORT || 3001; // Const para armanezar a porta do servidor
 const path = require("path");
 
 app.set("view engine", "ejs");
@@ -82,11 +82,50 @@ app.post("/criar", async (req, res) => {
       console.log(err);
 
       res.render("criar", {
-        message: "Ocorreu um erro ao cadastrar da sua Musica!",
+        message: "Ocorreu um erro ao cadastrar!",
       });
     }
   }
 });
+
+// app.get("/criar", (req, res) => {
+//   res.render("criar", {message});
+// });
+
+// app.post("/criar", async (req, res) => {
+
+//   const { nome, descricao, imagem } = req.body;
+
+//   if (!nome) {
+//     res.render("criar", {
+//       message: "Nome é obrigatório",
+//     });
+//   }
+
+//   else if (!imagem) {
+//     res.render("criar", {
+//       message: "Imagem é obrigatório",
+//     });
+//   }
+
+//   else {
+//     try {
+//       const musica = await Musica.create({
+//         nome,
+//         descricao,
+//         imagem,
+//       });
+
+//       res.redirect("/");
+//     } catch (err) {
+//       console.log(err);
+
+//       res.render("criar", {
+//         message: "Ocorreu um erro ao cadastrar da sua Musica!",
+//       });
+//     }
+//   }
+// });
 
 app.get("/editar/:id", async (req, res) => {
 
@@ -154,8 +193,8 @@ app.post("/deletar/:id", async (req, res) => {
 app.post("/", async (req, res) => {
 
   function login() {
-         let login = document.querySelector('#login').value
-         let senha = document.querySelector('#senha').value
+         const login = document.querySelector('#login').value
+         const senha = document.querySelector('#senha').value
          document.querySelector('#login').style.display = 'block'
   
          setTimeout(() => {
@@ -183,7 +222,4 @@ const enterLogin = document.querySelector('#senha')
    })
 });
 
-app.listen(port, () =>
-  console.log(`Servidor rodando em http://localhost:${port}`)
-);
-
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
