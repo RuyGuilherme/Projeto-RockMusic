@@ -475,7 +475,7 @@ article#content a#inscrever:hover {
 }
 
 section#inscrever {
-  background-color: rgb(177, 230, 255);
+  background-color: #00285f;
   padding: 3rem;
   display: flex;
   justify-content: center;
@@ -603,4 +603,12 @@ section#about{
 
 .title-wrapper-about {
   margin-bottom: 20px;
+}
+
+section#criar {
+  background-color: #00285f;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
